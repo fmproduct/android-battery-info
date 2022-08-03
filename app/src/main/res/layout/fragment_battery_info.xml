@@ -1,8 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvChargingState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Charging state: true"
+            android:layout_marginBottom="12dp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Percent: 12%"
+            android:layout_marginBottom="12dp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvChargingType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Charging type: USB"
+            android:layout_marginBottom="12dp"
+            />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvChargingLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Level: Low"
+            android:layout_marginBottom="12dp"
+            />
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</FrameLayout>

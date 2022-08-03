@@ -8,6 +8,7 @@
     <fragment
         android:id="@+id/batteryInfoFragment"
         android:label="Battery Info"
+        android:name="fm.battery.info.BatteryInfoFragment"
         tools:layout="@layout/fragment_battery_info"
         />
 
