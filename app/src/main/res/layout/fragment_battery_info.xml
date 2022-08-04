@@ -47,13 +47,27 @@
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/batteryHistoryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Battery History"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_gravity="bottom|center"
+        android:gravity="center"
         android:layout_marginBottom="12dp"
-        />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/batteryHistoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Battery History"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/runningAppsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="RunningApps"
+            />
+
+    </LinearLayout>
 
 </FrameLayout>

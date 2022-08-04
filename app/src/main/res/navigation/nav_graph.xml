@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_batteryInfoFragment_to_batteryHistoryFragment"
             app:destination="@id/batteryHistoryFragment" />
+        <action
+            android:id="@+id/action_batteryInfoFragment_to_runningAppsFragment"
+            app:destination="@id/runningAppsFragment" />
     </fragment>
 
     <fragment
@@ -21,5 +24,11 @@
         android:label="Battery History"
         android:name="fm.battery.info.ui.battery_history.BatteryHistoryFragment"
         tools:layout="@layout/fragment_battery_history"/>
+
+    <fragment
+        android:id="@+id/runningAppsFragment"
+        android:label="Running Apps"
+        android:name="fm.battery.info.ui.running_apps.RunningAppsFragment"
+        tools:layout="@layout/fragment_running_apps"/>
 
 </navigation>

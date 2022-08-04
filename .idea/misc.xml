@@ -8,7 +8,9 @@
         <entry key="app/src/main/res/layout/fragment_battery_history.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/fragment_battery_info.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/fragment_battery_ino.xml" value="0.2359375" />
+        <entry key="app/src/main/res/layout/fragment_running_apps.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/item_battery_history.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/item_running_app.xml" value="0.234375" />
       </map>
     </option>
   </component>
