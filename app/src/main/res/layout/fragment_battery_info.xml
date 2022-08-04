@@ -47,4 +47,13 @@
 
     </LinearLayout>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/batteryHistoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Battery History"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="12dp"
+        />
+
 </FrameLayout>

@@ -8,8 +8,18 @@
     <fragment
         android:id="@+id/batteryInfoFragment"
         android:label="Battery Info"
-        android:name="fm.battery.info.BatteryInfoFragment"
+        android:name="fm.battery.info.ui.battery_info.BatteryInfoFragment"
         tools:layout="@layout/fragment_battery_info"
-        />
+        >
+        <action
+            android:id="@+id/action_batteryInfoFragment_to_batteryHistoryFragment"
+            app:destination="@id/batteryHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/batteryHistoryFragment"
+        android:label="Battery History"
+        android:name="fm.battery.info.ui.battery_history.BatteryHistoryFragment"
+        tools:layout="@layout/fragment_battery_history"/>
 
 </navigation>

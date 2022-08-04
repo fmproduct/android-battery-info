@@ -1,17 +1,22 @@
-package fm.battery.info
+package fm.battery.info.ui.battery_info
 
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import fm.battery.info.R
 import fm.battery.info.core.BatteryInfoBroadcast
 import fm.battery.info.core.BatteryInfoListener
+import fm.battery.info.core.data.AppBatteryHistoryStorage
 import fm.battery.info.core.enums.ChargingType
+import fm.battery.info.core.models.BatteryHistory
 import fm.battery.info.databinding.FragmentBatteryInfoBinding
+import java.util.*
 
 
-class BatteryInfoFragment: Fragment(R.layout.fragment_battery_info), BatteryInfoListener {
+class BatteryInfoFragment : Fragment(R.layout.fragment_battery_info), BatteryInfoListener {
 
     private var _binding: FragmentBatteryInfoBinding? = null
     private val binding get() = _binding!!
@@ -23,10 +28,13 @@ class BatteryInfoFragment: Fragment(R.layout.fragment_battery_info), BatteryInfo
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentBatteryInfoBinding.bind(view)
+        binding.batteryHistoryButton.setOnClickListener {
+            findNavController().navigate(R.id.action_batteryInfoFragment_to_batteryHistoryFragment)
+        }
         setupBroadcast()
     }
 
-    private fun setupBroadcast(){
+    private fun setupBroadcast() {
         requireActivity().applicationContext.let { context ->
             val iFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
             context.registerReceiver(broadcast, iFilter)
@@ -43,7 +51,7 @@ class BatteryInfoFragment: Fragment(R.layout.fragment_battery_info), BatteryInfo
 
     override fun chargingPercentage(percent: Float) {
         binding.tvPercent.text = "Percent: %.0f%%".format(percent)
-        when(percent){
+        when (percent) {
             in 0f..20f -> {
                 binding.tvChargingLevel.text = "Level: Low"
             }
