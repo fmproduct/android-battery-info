@@ -44,6 +44,57 @@
             />
 
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvVoltage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Voltage level: 5000"
+            android:layout_marginBottom="12dp"
+            />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Temperature: 120"
+            android:layout_marginBottom="12dp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTechnology"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Technology: Li-ion"
+            android:layout_marginBottom="12dp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Health: Good"
+            android:layout_marginBottom="12dp"
+            />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCapacityInMicroampere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Capacity In Microampere: 430"
+            android:layout_marginBottom="12dp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvChargeTimeRemaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Charge Time Remaining: 430"
+            android:layout_marginBottom="12dp"
+            />
+
+
 
     </LinearLayout>
 

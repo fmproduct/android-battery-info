@@ -34,7 +34,7 @@ class BatteryInfoFragment : Fragment(R.layout.fragment_battery_info), BatteryInf
             findNavController().navigate(R.id.action_batteryInfoFragment_to_batteryHistoryFragment)
         }
         binding.runningAppsButton.setOnClickListener {
-            if (checkUsageStatsPermissionGranted() && checkWriteExternalPermission()) {
+            if (checkUsageStatsPermissionGranted()) {
                 findNavController().navigate(R.id.action_batteryInfoFragment_to_runningAppsFragment)
             } else {
                 val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
@@ -57,12 +57,6 @@ class BatteryInfoFragment : Fragment(R.layout.fragment_battery_info), BatteryInf
         } else false
     }
 
-    private fun checkWriteExternalPermission(): Boolean {
-        val permission = Manifest.permission.KILL_BACKGROUND_PROCESSES
-        val res = context!!.checkCallingOrSelfPermission(permission)
-        return res == PackageManager.PERMISSION_GRANTED
-    }
-
     private fun setupBroadcast() {
         requireActivity().applicationContext.let { context ->
             val iFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
@@ -76,6 +70,35 @@ class BatteryInfoFragment : Fragment(R.layout.fragment_battery_info), BatteryInf
 
     override fun chargingType(type: ChargingType) {
         binding.tvChargingType.text = "Charging type: ${type.name.uppercase()}"
+    }
+
+    override fun batteryVoltage(voltage: Int) {
+        binding.tvVoltage.text = "Voltage: $voltage"
+    }
+
+    override fun batteryTemperature(temperature: Int) {
+        binding.tvTemperature.text = "Temperature: $temperature"
+    }
+
+    override fun batteryTechnology(technology: String) {
+        binding.tvTechnology.text = "Technology $technology"
+    }
+
+    override fun batteryHealth(batteryHealth: String) {
+        binding.tvHealth.text = "Technology $batteryHealth"
+    }
+
+    override fun batteryCapacityInMicroampere(capacity: Int) {
+        binding.tvCapacityInMicroampere.text = "Capacity In Microampere $capacity"
+    }
+
+    override fun batteryChargeTimeRemaining(time: Long) {
+        if (time < 0) {
+            binding.tvChargeTimeRemaining.text = "Charge Time Remaining: None"
+        } else {
+            val minute = time / 1000 / 60
+            binding.tvChargeTimeRemaining.text = "Charge Time Remaining: $minute minute"
+        }
     }
 
     override fun chargingPercentage(percent: Float) {
